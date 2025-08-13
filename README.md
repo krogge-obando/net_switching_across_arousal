@@ -62,7 +62,7 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 - **community_allegiance.R** -code that computes community allegiance and makes the figures for figure 4
 
-- **global_net_flex_plots.R** -code that computes and makes figure 5.
+- **global_flex_task_plots.R** -code that computes and makes figure 5.
 
 ## ❓Have Questions
 
