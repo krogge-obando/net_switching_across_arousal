@@ -60,7 +60,9 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 - **violin_plot.R** -code that generates violin plots for this project Figure 2 and 3
 
-- **community_allegiance.R** -code that computes community allegiance and makes the figures for figure 4
+- **community_allegiance_dot_plot.R** -code that computes community allegiance and makes the figures for figure 4A
+
+- **community_allegiance_heat_map.R** - code that computes community allegiance as a fraction and makes figures 4C
 
 - **global_flex_task_plots.R** -code that computes and makes figure 5.
 
