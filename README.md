@@ -54,7 +54,9 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 - **community_assign_csv.m** - code that stores the community assignment to a csv file for R-studio
 
-- **null_model_analysis.R** - code that computes null model analysis to identify p-values
+- **net_null_model_analysis.R** - code that computes null model analysis to identify p-values
+
+- **parcel_null_model_analysis.R** - code that computes null model analysis to identify p-values
 
 - **violin_plot.R** -code that generates violin plots for this project Figure 2 and 3
 
