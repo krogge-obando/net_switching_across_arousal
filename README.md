@@ -15,7 +15,7 @@ This repo provides code to derive:
 
 This repo was designed with two folders
 1. codes: to see the code used to derive any of the things we stated in our *Highlights* go here, for key information of what the code does go to the section  *codes info*
-2. data: the only data provided is the outputs used to derive the figures of this paper. To download the HCP-7T data please go ["here"](https://www.humanconnectome.org/study/hcp-young-adult/data-releases/). For acces to the EEG-fMRI VU data please contact catie.chang@vanderbilt.edu
+2. data: the only data provided is the outputs used to derive the figures 4A and 4C of this paper. To download the HCP-7T data please go ["here"](https://www.humanconnectome.org/study/hcp-young-adult/data-releases/). For acces to the EEG-fMRI VU data please contact catie.chang@vanderbilt.edu
 
 ## 🧭 Software used in this project
 
