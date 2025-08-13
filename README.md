@@ -21,11 +21,11 @@ This repo was designed with two folders
 
 - Matlab version 2024a
 
-Matlab was used to derive the FINDLAB_atlas network and parcel time series, and derive network flexiblity. Please go to external functions to get steps on how to download functions used in conducting_net_flex.m and derive_null_models.m
+Matlab was used to derive the FINDLAB_atlas network and parcel time series, and derive network flexiblity. Please go to external functions to get steps on how to download functions used in *conducting_net_flex.m* and *derive_null_models.m*
 
 - Rstudio version RStudio/2024.12.0+467
 
-Rstudio was used to conduct statistical analysis and visualizations to determine if temporal global components related to anxiety in code *anx_global_analysis_fig.R*, and if any brain network connectivity measures related to anxiety pre and post global signal regression *net_regress_model.R*
+Rstudio was used to conduct statistical analysis and visualizations 
 
 ## ❗ External functions needed to run the codes
 
