@@ -43,14 +43,23 @@ To derive the null models you will need this file
 Due to reduce redundancy we only share the codes needed to run the analysis with the EEG-fMRI VU data.
 
 *derive_FIND_net_ts.m* - code that conducts dual regression to derive networks time series
+
 *derive_FIND_parcel_ts.m* - code that derives parcel time series 
+
 *derive_null_models_ts.m - code that stores null models
+
 *run_compute_net_flex.m* code that runs compute_net_flex.m to store the experimental or null models to compute network flexiblity
+
 *compute_net_flex.m* - function code that derives network flexiblity with either setting for null models or experimental data
+
 *community_assign_csv.m* - code that stores the community assignment to a csv file for R-studio
+
 *null_model_analysis.R* - code that computes null model analysis to identify p-values
+
 *violin_plot.R* -code that generates violin plots for this project Figure 2 and 3
+
 *community_allegiance.R* -code that computes community allegiance and makes the figures for figure 4
+
 *global_net_flex_plots.R* -code that computes and makes figure 5.
 
 ## ❓Have Questions
