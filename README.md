@@ -68,4 +68,4 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 ## ❓Have Questions
 
-For additional information about the project or how to use the codes feel free to reach out ti my vanderbilt email at kimberly.kundert.obando@vanderbilt.eud
+For additional information about the project or how to use the codes feel free to reach out to my vanderbilt email at kim.kundert.obando@vanderbilt.eud
