@@ -7,11 +7,11 @@
 clear; clc; close all; 
 
 %write out all paths
-main_path = '/data1/neurdylab/datasets/eegfmri_vu/PROC/';
-save_dir='/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/FIND_atlas_ts';
+main_path = '';
+save_dir='';
 
 %this is the text file that will load in all the subjects name
-scan= readtable('/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/scan_list.txt', 'readvariablenames', 0);
+scan= readtable('scan_list.txt', 'readvariablenames', 0);
 
 allsub_corr_list=[];
 
@@ -23,7 +23,7 @@ for subject = 1:height(scan)
   
     % load fMRI file names
     nii_name = [subject_name,'-',scan_number,'_EPI2MNI_sm_nr.nii.gz'];
-    subj_dir=[main_path,subject_name,'/meica_proc_',scan_number,'/meica_out/',nii_name];
+    subj_dir=[main_path,subject_name,nii_name];
     subj_fmri = niftiread(subj_dir); 
 
     %reformat the fMRI file
@@ -38,7 +38,7 @@ for subject = 1:height(scan)
 
     %Load motion parameters
     par_name = [subject_name,'-',scan_number,'_ecr_e2.volreg_par'];
-    par_dir=[main_path,subject_name,'/meica_proc_',scan_number,'/echo2/',par_name];
+    par_dir=[main_path,subject_name,scan_number,par_name];
 
     par_file  =load(par_dir);
     dMP=diff(par_file);
@@ -54,7 +54,7 @@ for subject = 1:height(scan)
     Y_hm_removed = Y_hm_removed';
     
      for i=1:9
-        d_dmn_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/dorsal_DMN/','0',num2str(i),'/',num2str(i),'.nii'];
+        d_dmn_mask_path =['Functional_ROIs/dorsal_DMN/','0',num2str(i),'/',num2str(i),'.nii'];
         d_dmn_mask=niftiread(d_dmn_mask_path);
         d_dmn_reshape = reshape(d_dmn_mask,[],1);
         d_dmn_parcel=find(d_dmn_reshape>0);
@@ -65,10 +65,10 @@ for subject = 1:height(scan)
 
     for i=1:10
         if i<10
-            v_dmn_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/ventral_DMN/','0',num2str(i),'/',num2str(i),'.nii'];
+            v_dmn_mask_path =['Functional_ROIs/ventral_DMN/','0',num2str(i),'/',num2str(i),'.nii'];
 
         else
-            v_dmn_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/ventral_DMN/',num2str(i),'/',num2str(i),'.nii'];
+            v_dmn_mask_path =['Functional_ROIs/ventral_DMN/',num2str(i),'/',num2str(i),'.nii'];
         end
         v_dmn_mask=niftiread(v_dmn_mask_path);
         v_dmn_reshape = reshape(v_dmn_mask,[],1);
@@ -79,7 +79,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:7
-        a_sal_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/anterior_Salience/','0',num2str(i),'/',num2str(i),'.nii'];
+        a_sal_mask_path =['Functional_ROIs/anterior_Salience/','0',num2str(i),'/',num2str(i),'.nii'];
         a_sal_mask=niftiread(a_sal_mask_path);
         a_sal_reshape = reshape(a_sal_mask,[],1);
         a_sal_parcel=find(a_sal_reshape>0);
@@ -90,10 +90,10 @@ for subject = 1:height(scan)
 
     for i=1:12
         if i<10
-            p_sal_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/post_Salience/','0',num2str(i),'/',num2str(i),'.nii'];
+            p_sal_mask_path =['Functional_ROIs/post_Salience/','0',num2str(i),'/',num2str(i),'.nii'];
 
         else
-            p_sal_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/post_Salience/',num2str(i),'/',num2str(i),'.nii'];
+            p_sal_mask_path =['Functional_ROIs/post_Salience/',num2str(i),'/',num2str(i),'.nii'];
         end
 
         p_sal_mask=niftiread(p_sal_mask_path);
@@ -105,7 +105,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:6
-        lcen_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/LECN/','0',num2str(i),'/',num2str(i),'.nii'];
+        lcen_mask_path =['Functional_ROIs/LECN/','0',num2str(i),'/',num2str(i),'.nii'];
         lcen_mask=niftiread(lcen_mask_path);
         lcen_reshape = reshape(lcen_mask,[],1);
         lcen_parcel=find(lcen_reshape>0);
@@ -116,7 +116,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:6
-        rcen_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/RECN/','0',num2str(i),'/',num2str(i),'.nii'];
+        rcen_mask_path =['Functional_ROIs/RECN/','0',num2str(i),'/',num2str(i),'.nii'];
         rcen_mask=niftiread(rcen_mask_path);
         rcen_reshape = reshape(rcen_mask,[],1);
         rcen_parcel=find(rcen_reshape>0);
@@ -126,7 +126,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:3
-        aud_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Auditory/','0',num2str(i),'/',num2str(i),'.nii'];
+        aud_mask_path =['Functional_ROIs/Auditory/','0',num2str(i),'/',num2str(i),'.nii'];
         aud_mask=niftiread(aud_mask_path);
         aud_reshape = reshape(aud_mask,[],1);
         aud_parcel=find(aud_reshape>0);
@@ -136,7 +136,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:5
-        basg_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Basal_Ganglia/','0',num2str(i),'/',num2str(i),'.nii'];
+        basg_mask_path =['Functional_ROIs/Basal_Ganglia/','0',num2str(i),'/',num2str(i),'.nii'];
         basg_mask=niftiread(basg_mask_path);
         basg_reshape = reshape(basg_mask,[],1);
         basg_parcel=find(basg_reshape>0);
@@ -147,7 +147,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:2
-        pVis_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/prim_Visual/','0',num2str(i),'/',num2str(i),'.nii'];
+        pVis_mask_path =['Functional_ROIs/prim_Visual/','0',num2str(i),'/',num2str(i),'.nii'];
         pVis_mask=niftiread(pVis_mask_path);
         pVis_reshape = reshape(pVis_mask,[],1);
         pVis_parcel=find(pVis_reshape>0);
@@ -157,7 +157,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:2
-        hVis_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/high_Visual/','0',num2str(i),'/',num2str(i),'.nii'];
+        hVis_mask_path =['Functional_ROIs/high_Visual/','0',num2str(i),'/',num2str(i),'.nii'];
         hVis_mask=niftiread(hVis_mask_path);
         hVis_reshape = reshape(hVis_mask,[],1);
         hVis_parcel=find(hVis_reshape>0);
@@ -167,7 +167,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:7
-        lang_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Language/','0',num2str(i),'/',num2str(i),'.nii'];
+        lang_mask_path =['Functional_ROIs/Language/','0',num2str(i),'/',num2str(i),'.nii'];
         lang_mask=niftiread(lang_mask_path);
         lang_reshape = reshape(lang_mask,[],1);
         lang_parcel=find(lang_reshape>0);
@@ -177,7 +177,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:4
-        prec_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Precuneus/','0',num2str(i),'/',num2str(i),'.nii'];
+        prec_mask_path =['Functional_ROIs/Precuneus/','0',num2str(i),'/',num2str(i),'.nii'];
         prec_mask=niftiread(prec_mask_path);
         prec_reshape = reshape(prec_mask,[],1);
         prec_parcel=find(prec_reshape>0);
@@ -187,7 +187,7 @@ for subject = 1:height(scan)
     end
 
     for i=1:6
-        sensmotor_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Sensorimotor/','0',num2str(i),'/',num2str(i),'.nii'];
+        sensmotor_mask_path =['Functional_ROIs/Sensorimotor/','0',num2str(i),'/',num2str(i),'.nii'];
         sensmotor_mask=niftiread(sensmotor_mask_path);
         sensmotor_reshape = reshape(sensmotor_mask,[],1);
         sensmotor_parcel=find(sensmotor_reshape>0);
@@ -198,10 +198,10 @@ for subject = 1:height(scan)
 
     for i=1:11
         if i<10
-            vis_spat_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Visuospatial/','0',num2str(i),'/',num2str(i),'.nii'];
+            vis_spat_mask_path =['Functional_ROIs/Visuospatial/','0',num2str(i),'/',num2str(i),'.nii'];
 
         else
-            vis_spat_mask_path =['/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Visuospatial/',num2str(i),'/',num2str(i),'.nii'];
+            vis_spat_mask_path =['Functional_ROIs/Visuospatial/',num2str(i),'/',num2str(i),'.nii'];
         end
         vis_spat_mask=niftiread(vis_spat_mask_path);
         vis_spat_reshape = reshape(vis_spat_mask,[],1);
