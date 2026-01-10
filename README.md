@@ -1,12 +1,12 @@
-# 🧠 Network Flexiblity across Arousal State Project
+# 🧠 Network Switching across Arousal State Project
 
-Hello, this repo will store the code needed to reproduce the results in the paper "Arousal state alters network flexibility and moderates its relationship to cognitive task performance"
+Hello, this repo will store the code needed to reproduce the results in the paper "Arousal state alters brain network switching and moderates cognitive task performance"
 
 ## ⭐ Highlights
 
 This repo provides code to derive:
 - FINDLAB network and parcel time series
-- Network flexiblity of the FINDLAB networks and parcels
+- Network switching of the FINDLAB networks and parcels
 - code to derive null models used in the paper
 - code to compute p-stat from the null models
 - generate all the figures from the paper
@@ -29,7 +29,7 @@ Rstudio was used to conduct statistical analysis and visualizations
 
 ## ❗ External functions needed to run the codes
 
-To derive network flexiblity we used the following external functions, please download these codes before attempting to run the code.
+To derive network switching we used the following external functions, please download these codes before attempting to run the code.
 
 1. folder GenLouvain-master at [https://github.com/GenLourvain/HenLouvain](https://github.com/GenLouvain/GenLouvain)
 2. flexibilty.m at [http://commdetect.weebly.com/](http://commdetect.weebly.com)
@@ -48,9 +48,9 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 - **derive_null_models_ts.m** - code that stores null models
 
-- **run_compute_net_flex.m** code that runs compute_net_flex.m to store the experimental or null models to compute network flexiblity
+- **run_compute_net_switch.m** code that runs compute_net_flex.m to store the experimental or null models to compute network flexiblity
 
-- **compute_net_flex.m** - function code that derives network flexiblity with either setting for null models or experimental data
+- **compute_net_switch.m** - function code that derives network flexiblity with either setting for null models or experimental data
 
 - **community_assign_csv.m** - code that stores the community assignment to a csv file for R-studio
 
@@ -64,7 +64,7 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 - **community_allegiance_heat_map.R** - code that computes community allegiance as a fraction and makes figures 4C
 
-- **global_flex_task_plots.R** -code that computes and makes figure 5.
+- **global_switch_task_plots.R** -code that computes and makes figure 5.
 
 ## ❓Have Questions
 
