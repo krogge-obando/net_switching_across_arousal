@@ -1,4 +1,4 @@
-#This code will see if cog-flex relates to network-switch
+#This code will see if cog- relates to network-switch
 
 #Load df
 
@@ -6,12 +6,11 @@ library(tidyverse)
 library(dplyr)
 library(stats)
 
-df_net<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/Net_Flex_MSTR.csv")
+df_net<-read.csv("Net_Flex_MSTR.csv")
 
-df_behavior<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/HCP-YA_allSubjects_behavorialData.csv")
+df_behavior<-read.csv("HCP-YA_allSubjects_behavorialData.csv")
 
 #remove the subjects that have both alert and drowsy
-
 
 subjects_to_remove <- df_net %>%
   group_by(ID) %>%
@@ -24,12 +23,11 @@ df_filtered <- df_net %>%
 
 df_filtered$ID<-as.factor(df_filtered$ID)
 
-##See if our network flexibility relates to hours of sleep the night before
-
 global_network_flexibility<-df_filtered %>%
   group_by(ID) %>%
   summarise(across(where(is.numeric), mean, na.rm = TRUE))
 
+#derive global switching
 global_network_flexibility$global_flex<-rowMeans(global_network_flexibility[,-1,2],na.rm=TRUE)
 
 df_behavior$ID<-as.factor(df_behavior$ID)
@@ -41,6 +39,7 @@ gnf_behav<-left_join(global_network_flexibility,df_behavior,by="ID")
 
 gnf_behav$arousal_state<-df_unique$Arousal_State
 
+# Make plots
 library(ggplot2)
 
 ggplot(gnf_behav, aes(x = global_flex, y = Relational_Task_Acc, color = arousal_state)) +
@@ -83,7 +82,7 @@ ggplot(gnf_behav, aes(x = global_flex, y = WM_Task_Acc, color = arousal_state)) 
 model2<-summary(lm(WM_Task_Acc ~ global_flex + arousal_state + global_flex:arousal_state, data=gnf_behav ))
 
 
-# Extract the p-values of the interaction term
+# Extract the p-values of the interaction term and conduct corrections
 pvals <- c(
   model1$coefficients[4, 4],
   model2$coefficients[4, 4]
