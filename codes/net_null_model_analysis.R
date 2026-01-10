@@ -160,23 +160,23 @@ null_model_p_value_results <- data.frame(network=c("psal_p_value","asal_p_value"
 
 
 
-df_null_1<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_100_null_switching_rate_results.csv",0)
+df_null_1<-read.csv("FIND_atlas_networks_100_null_switching_rate_results.csv",0)
 FIND_null_1_pval<-FIND_compute_null_pvalue(df_null_1)
-write.csv(FIND_null_1_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_model.csv")
+write.csv(FIND_null_1_pval,"FIND_atlas_networks_null_model.csv")
 
-#df_null_2<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_100_null_gs_switching_rate_results.csv",0)
+#df_null_2<-read.csv("FIND_atlas_networks_100_null_gs_switching_rate_results.csv",0)
 
 #This was done with the corrected values
-df_null_2<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_NET_gs_corrected_switching_rate_null.csv",0)
+df_null_2<-read.csv("FIND_NET_gs_corrected_switching_rate_null.csv",0)
 
 FIND_null_2_pval<-FIND_compute_null_pvalue(df_null_2)
-write.csv(FIND_null_2_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_gs_model.csv")
+write.csv(FIND_null_2_pval,"FIND_atlas_networks_null_gs_model.csv")
 
-df_null_3<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_100_null_var_switching_rate_results.csv",0)
+df_null_3<-read.csv("FIND_atlas_networks_100_null_var_switching_rate_results.csv",0)
 FIND_null_3_pval<-FIND_compute_null_pvalue(df_null_3)
-write.csv(FIND_null_3_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_var_model.csv")
+write.csv(FIND_null_3_pval,"FIND_atlas_networks_null_var_model.csv")
 
-df_null_4<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_networks_stat_corr_switching_rate_null.csv",0)
+df_null_4<-read.csv("FIND_networks_stat_corr_switching_rate_null.csv",0)
 FIND_null_4_pval<-FIND_compute_null_pvalue(df_null_4)
-write.csv(FIND_null_4_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_stat_corr_model.csv")
+write.csv(FIND_null_4_pval,"FIND_atlas_networks_null_stat_corr_model.csv")
 
