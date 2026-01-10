@@ -34,9 +34,9 @@ compute_co_assignment_matrix <- function(df_com) {
 
 alert_scans<-c("vcon02_scan01","vcon07_scan01","vcon15_scan01","vcon15_scan02","vcon17_scan02","vcon19_scan02","vcon20_scan01", "vcon20_scan02","vcon29_scan01","vcon29_scan02")
 
-full_path <- "/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/community_assignment/"
+full_path <- "/data/community_assignment/"
 
-df_com_first<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/community_assignment/vcon02_scan01_community.csv",0)
+df_com_first<-read.csv("vcon02_scan01_community.csv",0)
 n_nodes<-nrow(df_com_first)
 
 sum_matrix<-matrix(0 ,nrow= n_nodes, ncol = n_nodes)
@@ -51,7 +51,7 @@ for (i in 1:nrow(df_paths)) {
   
   df_com <- read.csv(file_to_load,0)
 
-  #df_com<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/100610-REST1_PA_community.csv")
+  #df_com<-read.csv("/data/100610-REST1_PA_community.csv")
 
   sub_matrix<-compute_co_assignment_matrix(df_com)
   
@@ -81,7 +81,7 @@ for (i in 1:nrow(df_paths)) {
   
   df_com <- read.csv(file_to_load,0)
   
-  #df_com<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/100610-REST1_PA_community.csv")
+  #df_com<-read.csv("/data/100610-REST1_PA_community.csv")
   
   sub_matrix_d<-compute_co_assignment_matrix(df_com)
   
