@@ -6,31 +6,30 @@
 clear; clc; close all; 
 
 %paths
-main_path = '/data1/neurdylab/datasets/eegfmri_vu/PROC/';
-save_dir='/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/FIND_atlas_ts'
-
+main_path = '';
+save_dir='/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/
 % mask out the skull (nonzero voxels)
-mni_mask = niftiread('/data1/neurdylab/MNI152_T1_2mm_brain_mask_filled.nii.gz');
+mni_mask = niftiread('MNI152_T1_2mm_brain_mask_filled.nii.gz');
 brainVox = find(mni_mask>0);
 
 %Calling in the FIND-LAB network maps
-a_sal_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/anterior_Salience/anterior_Salience.nii.gz');
-p_sal_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/post_Salience/post_Salience.nii.gz');
-d_dmn_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/dorsal_DMN/dDMN.nii.gz');
-v_dmn_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/ventral_DMN/vDMN.nii.gz');
-l_cen_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/LECN/LECN.nii.gz');
-r_cen_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/RECN/RECN.nii.gz');
-aud_map   = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Auditory/Auditory.nii.gz');
-bas_g_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Basal_Ganglia/Basal_Ganglia.nii.gz');
-h_vis_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/high_Visual/high_Visual.nii.gz');
-lang_map  = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Language/Language.nii.gz');
-prec_map  = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Precuneus/Precuneus.nii.gz');
-p_vis_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/prim_Visual/prim_Visual.nii.gz');
-sens_map  = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Sensorimotor/Sensorimotor.nii.gz');
-vis_s_map = niftiread('/data1/neurdylab/kim_ro/tri_net_proj/Functional_ROIs/Visuospatial/Visuospatial.nii.gz');
+a_sal_map = niftiread('Functional_ROIs/anterior_Salience/anterior_Salience.nii.gz');
+p_sal_map = niftiread('Functional_ROIs/post_Salience/post_Salience.nii.gz');
+d_dmn_map = niftiread('Functional_ROIs/dorsal_DMN/dDMN.nii.gz');
+v_dmn_map = niftiread('Functional_ROIs/ventral_DMN/vDMN.nii.gz');
+l_cen_map = niftiread('Functional_ROIs/LECN/LECN.nii.gz');
+r_cen_map = niftiread('Functional_ROIs/RECN/RECN.nii.gz');
+aud_map   = niftiread('Functional_ROIs/Auditory/Auditory.nii.gz');
+bas_g_map = niftiread('Functional_ROIs/Basal_Ganglia/Basal_Ganglia.nii.gz');
+h_vis_map = niftiread('Functional_ROIs/high_Visual/high_Visual.nii.gz');
+lang_map  = niftiread('Functional_ROIs/Language/Language.nii.gz');
+prec_map  = niftiread('Functional_ROIs/Precuneus/Precuneus.nii.gz');
+p_vis_map = niftiread('Functional_ROIs/prim_Visual/prim_Visual.nii.gz');
+sens_map  = niftiread('Functional_ROIs/Sensorimotor/Sensorimotor.nii.gz');
+vis_s_map = niftiread('Functional_ROIs/Visuospatial/Visuospatial.nii.gz');
 
 %this is the text file that will load in all the subjects name
-scan= readtable('/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/scan_list.txt', 'readvariablenames', 0);
+scan= readtable('scan_list.txt', 'readvariablenames', 0);
 
 allsub_corr_list=[];
 %%
@@ -42,7 +41,7 @@ for subject = 1:height(scan)
   
     % load fMRI file names
     nii_name = [subject_name,'-',scan_number,'_EPI2MNI_sm_nr.nii.gz'];
-    subj_dir=[main_path,subject_name,'/meica_proc_',scan_number,'/meica_out/',nii_name];
+    subj_dir=[main_path,subject_name,nii_name];
     subj_fmri = niftiread(subj_dir); 
 
     %reformat the fMRI file
@@ -58,7 +57,7 @@ for subject = 1:height(scan)
 
     %Load motion parameters
     par_name = [subject_name,'-',scan_number,'_ecr_e2.volreg_par'];
-    par_dir=[main_path,subject_name,'/meica_proc_',scan_number,'/echo2/',par_name];
+    par_dir=[main_path,subject_name,par_name];
 
     par_file  =load(par_dir);
     dMP=diff(par_file);
