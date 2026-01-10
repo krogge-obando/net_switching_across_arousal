@@ -3,11 +3,11 @@
 
 %load alert scan names
 %%
-scan_list= readtable('/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/scan_list.txt', 'readvariablenames', 0);
+scan_list= readtable('scan_list.txt', 'readvariablenames', 0);
 
 
-data_path=['/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/net_flex/']
-save_path=['/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/community_assignment/']
+data_path=['']
+save_path=['']
 %%
 for scan=1:height(scan_list)
 
