@@ -284,42 +284,42 @@ return(list(asal_pvalue_list=asal_pvalue_list,psal_pvalue_list=psal_pvalue_list,
             rcen_pvalue_list=rcen_pvalue_list,ddmn_pvalue_list=ddmn_pvalue_list,vdmn_pvalue_list=vdmn_pvalue_list))
 }
 
-df_null_1<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_parcels_100_null_switching_rate_results.csv",0)
+df_null_1<-read.csv("FIND_atlas_parcels_100_null_switching_rate_results.csv",0)
 FIND_null_1_pval<-FIND_compute_null_pvalue(df_null_1)
 FIND_null_1_pval<-as.data.frame((FIND_null_1_pval))
 FIND_null_1_pval<-as.data.frame(t(FIND_null_1_pval))
 
-#list.save(FIND_null_1_pval,'/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_parcels_null.rdata')
+#list.save(FIND_null_1_pval,'FIND_parcels_null.rdata')
 
-write.csv(FIND_null_1_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_model_1_results.csv")
+write.csv(FIND_null_1_pval,"FIND_atlas_networks_null_model_1_results.csv")
 
-#df_null_2<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_parcels_100_null_gs_switching_rate_results.csv",0)
+#df_null_2<-read.csv("FIND_atlas_parcels_100_null_gs_switching_rate_results.csv",0)
 
-df_null_2<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_parcels_gs_corrected_switching_rate_null.csv",0)
+df_null_2<-read.csv("FIND_parcels_gs_corrected_switching_rate_null.csv",0)
 FIND_null_2_pval<-FIND_compute_null_pvalue(df_null_2)
 FIND_null_2_pval<-as.data.frame((FIND_null_2_pval))
 FIND_null_2_pval<-as.data.frame(t(FIND_null_2_pval))
 
-list.save(FIND_null_2_pval,'/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_parcels_null_gs.rdata')
+list.save(FIND_null_2_pval,'FIND_parcels_null_gs.rdata')
 
-write.csv(FIND_null_2_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_gs_model_results.csv")
+write.csv(FIND_null_2_pval,"FIND_atlas_networks_null_gs_model_results.csv")
 
-df_null_3<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_parcels_100_null_var_switching_rate_results.csv",0)
+df_null_3<-read.csv("FIND_atlas_parcels_100_null_var_switching_rate_results.csv",0)
 FIND_null_3_pval<-FIND_compute_null_pvalue(df_null_3)
 FIND_null_3_pval<-as.data.frame((FIND_null_3_pval))
 FIND_null_3_pval<-as.data.frame(t(FIND_null_3_pval))
-#list.save(FIND_null_3_pval,'/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_parcels_null_var.rdata')
+#list.save(FIND_null_3_pval,'FIND_parcels_null_var.rdata')
 
-write.csv(FIND_null_3_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_var_model_results.csv")
+write.csv(FIND_null_3_pval,"FIND_atlas_networks_null_var_model_results.csv")
 
-df_null_4<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_parcels_stat_corr_corrected_switching_rate_null.csv",0)
+df_null_4<-read.csv("FIND_parcels_stat_corr_corrected_switching_rate_null.csv",0)
 
 FIND_null_4_pval<-FIND_compute_null_pvalue(df_null_4)
 
 FIND_null_4_pval<-as.data.frame((FIND_null_4_pval))
 FIND_null_4_pval<-as.data.frame(t(FIND_null_4_pval))
 
-write.csv(FIND_null_4_pval,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_networks_null_stat_cor_model_results.csv")
+write.csv(FIND_null_4_pval,"FIND_atlas_networks_null_stat_cor_model_results.csv")
 
   
 
