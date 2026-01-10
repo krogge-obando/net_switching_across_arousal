@@ -9,7 +9,7 @@ This repo provides code to derive:
 - Network switching of the FINDLAB networks and parcels
 - code to derive null models used in the paper
 - code to compute p-stat from the null models
-- generate all the figures from the paper
+- generate all the analysis figures from the paper
 
 ## 🗒️ How to navigate this repo??
 
