@@ -35,9 +35,9 @@ compute_co_assignment_matrix <- function(df_com) {
 #compute t-test investigations
 alert_scans<-c("vcon02_scan01","vcon07_scan01","vcon15_scan01","vcon15_scan02","vcon17_scan02","vcon19_scan02","vcon20_scan01", "vcon20_scan02","vcon29_scan01","vcon29_scan02")
 
-full_path <- "/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/community_assignment/"
+full_path <- "[enter full path]"
 
-df_com_first<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/community_assignment/vcon02_scan01_community.csv",0)
+df_com_first<-read.csv("vcon02_scan01_community.csv",0)
 
 
 df_paths<-as.data.frame(alert_scans)
@@ -163,14 +163,14 @@ for (col in network_columns) {
 
 mw_results$p_adj_FDR <- p.adjust(mw_results$p_value, method = "BH")
 
-write.csv(mw_results,"/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/community_assignment_mw_results_bfcorr.csv",row.names=FALSE)
+write.csv(mw_results,"community_assignment_mw_results_bfcorr.csv",row.names=FALSE)
 
 ##MAKE FIGURE 4 A)
 
 
 
 
-df<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/community_assignment/coassignment_network_pairs_wide_VU.csv")
+df<-read.csv("coassignment_network_pairs_wide_VU.csv")
 
 df_melt <- melt(df,id.vars=c("arousal_state","Subject"), variable.name="Community_Assignment_Pair",value.name = "Fraction")
 
