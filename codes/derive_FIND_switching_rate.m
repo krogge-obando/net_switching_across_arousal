@@ -6,9 +6,9 @@
 addpath GenLouvain-master/HelperFunctions/
 addpath GenLouvain-master/
 
-save_path=["/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/net_flex/"];
+save_path=[""];
 
-scan_list= readtable('/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/scan_list.txt', 'readvariablenames', 0);
+scan_list= readtable('scan_list.txt', 'readvariablenames', 0);
 
 order_of_scan_list=[];
 
@@ -20,7 +20,7 @@ for scan = 1:height(scan_list)
     scan_number  = scan_list{scan,2}{1};
     this_subject =[subject_name,'_',scan_number]
 
-    scan_ts_file=['/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/FIND_atlas_ts/',this_subject,'_FIND_net_ts.mat'];
+    scan_ts_file=['_FIND_net_ts.mat'];
  
     load(scan_ts_file)
    
@@ -49,7 +49,7 @@ for scan = 1:height(scan_list)
     scan_number  = scan_list{scan,2}{1};
     this_subject =[subject_name,'_',scan_number]
 
-    scan_ts_file=['/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/FIND_atlas_ts/',this_subject,'_FIND_parcel_ts.mat'];
+    scan_ts_file=['_FIND_parcel_ts.mat'];
  
     load(scan_ts_file)
 
