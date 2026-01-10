@@ -1,6 +1,6 @@
 %This code is made to run a parloop to compute the null models 
 
-%Author:Kim Rogge-Obando k.rogge.obando@gmail.com
+%Author:Kim Kundert-Obando k.rogge.obando@gmail.com
 %add paths
 %%
 addpath GenLouvain-master/HelperFunctions/
@@ -21,7 +21,6 @@ parfor scan=1:dims(1)
        ,number_of_communities_sub(scan,:,:),node_switching_sub(scan,:,:)] = compute_net_flex(scan_ts,72,100);
 
 end
-
 
 save_path="/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/null_net_flex/"
 file_name="FIND_Parcels_net_flex_null_model_3_gs.mat"
