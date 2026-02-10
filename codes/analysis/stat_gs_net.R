@@ -1,6 +1,6 @@
 #This code will derive the statistics of static correlation and network to global mean correlation across arousal state
 
-vu_df <- read.csv("/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/data/eeg_fmri_vu_measures_of_interest.csv")
+vu_df <- read.csv("/eeg_fmri_vu_measures_of_interest.csv")
 
 # Map network names to column names in vu_df
 network_cols <- c(
@@ -75,10 +75,10 @@ for (network in names(network_cols)) {
 
 mw_results$q_value <- p.adjust(mw_results$p_value, method = "BH")
 
-write.csv(mw_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/EEG_fMRI_VU_global_static_corr_2_9_26.csv")
+write.csv(mw_results,"/EEG_fMRI_VU_global_static_corr.csv")
 
 
-hcp_df <- read.csv("/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/data/HCP_7T_measures_of_interest.csv")
+hcp_df <- read.csv("/HCP_7T_measures_of_interest.csv")
 
 # Map network names to column names in vu_df
 network_cols <- c(
@@ -156,5 +156,5 @@ mw_results$q_value <- p.adjust(mw_results$p_value, method = "BH")
 
 hcp_mw_results<-mw_results
 
-write.csv(hcp_mw_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/HCP_7T_global_static_corr_2_9_26.csv")
+write.csv(hcp_mw_results,"/HCP_7T_global_static_corr.csv")
 
