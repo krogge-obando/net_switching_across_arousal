@@ -1,7 +1,7 @@
 #This code will compute the stats for comparing Community alleigience across arousal state.
 
 #Load data
-community_assign_mat_fin<-read.csv("/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/data/HCP_7T_community_allegience.csv")
+community_assign_mat_fin<-read.csv("/HCP_7T_community_allegience.csv")
 
 # Get only the network-pair columns
 network_columns <- setdiff(colnames(community_assign_mat_fin), c("Subject", "arousal_state"))
@@ -76,13 +76,13 @@ mw_results$q_value <- p.adjust(mw_results$p_value, method = "BH")
 
 hcp_mw_results<-mw_results
 
-write.csv(hcp_mw_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/HCP_7T_community_assignment_mw_results_2_9_26.csv",row.names=FALSE)
+write.csv(hcp_mw_results,"/HCP_7T_community_allegiance_results.csv",row.names=FALSE)
 
 
 #VU-EEG-fMRI
 
 
-community_assign_mat_fin<-read.csv("/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/data/eeg_fmri_community_allegience_2_9_26.csv")
+community_assign_mat_fin<-read.csv("eeg_fmri_community_allegience_2_9_26.csv")
 
 # Get only the network-pair columns
 network_columns <- setdiff(colnames(community_assign_mat_fin), c("Subject", "arousal_state"))
@@ -147,7 +147,7 @@ for (col in network_columns) {
 # FDR correction
 mw_results$q_value <- p.adjust(mw_results$p_value, method = "BH")
 
-write.csv(mw_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/EEG_fMRI_VU_community_allegience_2_9_26.csv",row.names=FALSE)
+write.csv(mw_results,"/EEG_fMRI_VU_community_allegiance.csv",row.names=FALSE)
 
 
 
