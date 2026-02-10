@@ -2,7 +2,7 @@
 
 #Computing the stats for HCP-7T data
 
-df_net<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/Net_Flex_MSTR.csv")
+df_net<-read.csv("/Net_Flex_MSTR.csv")
 
 mw_results<-data.frame()
 
@@ -73,12 +73,12 @@ mw_results$q_value <- p.adjust(mw_results$p_value, method = "BH")
 
 HCP_mw_results<-mw_results
 
-write.csv(HCP_mw_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/HCP_7T_Network_Wilcoxn_Results_2_4_26.csv")
+write.csv(HCP_mw_results,"HCP_7T_Network_Wilcoxn_Results.csv")
 
 
 ##Now do the parcels
 
-df_parcel<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/Net_Parcel_MSTR.csv")
+df_parcel<-read.csv("/Net_Parcel_MSTR.csv")
 all_cols <- colnames(df_parcel)
 
 # Select only parcels with dmn, sal, cen
@@ -153,11 +153,11 @@ mw_parcel_results$q_value <- p.adjust(mw_parcel_results$p_value, method = "BH")
 
 HCP_parcel_results<-mw_parcel_results
 
-write.csv(HCP_parcel_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/HCP_7T_Parcel_Wilcoxn_Results_2_4_26.csv")
+write.csv(HCP_parcel_results,"/HCP_7T_Parcel_Wilcoxn_Results.csv")
 
 ##Repeat for VU-EEG-fMRI data
 
-df_net <- read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_net_sr_72TR_5_27_25.csv")
+df_net <- read.csv("/FIND_atlas_net_sr_72TR_5_27_25.csv")
 
 mw_results<-data.frame()
 
@@ -228,9 +228,9 @@ mw_results$q_value <- p.adjust(mw_results$p_value, method = "BH")
 
 VU_mw_results<-mw_results 
 
-write.csv(VU_mw_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/VU_EEG_fMRI_Wilcoxn_Results_2_4_26.csv")
+write.csv(VU_mw_results,"/VU_EEG_fMRI_Wilcoxn_Results.csv")
 
-df_parcel<-read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_parcel_sr_72TR_5_27_25.csv")
+df_parcel<-read.csv("/FIND_atlas_parcel_sr_72TR_5_27_25.csv")
 
 all_cols <- colnames(df_parcel)
 
@@ -305,4 +305,4 @@ mw_parcel_results$q_value <- p.adjust(mw_parcel_results$p_value, method = "BH")
 
 VU_parcel_results<-mw_parcel_results 
 
-write.csv(VU_parcel_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/VU_EEG_fMRI_parcels_Wilcoxn_Results_2_4_26.csv")
+write.csv(VU_parcel_results,"/VU_EEG_fMRI_parcels_Wilcoxn_Results.csv")
