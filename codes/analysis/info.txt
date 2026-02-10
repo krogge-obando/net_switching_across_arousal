@@ -1,1 +1,15 @@
+These codes correspond to the analysis and reported results in the manuscript.
+
+sr_across_arousal.R - code that conducts analysis reported in section "Network switching across arousal state"
+
+stat_gs_net.R -code that conducts analysis that is reported in "Static correlation and network-to-global-mean correlation across arousal state"
+
+community_allegiance_stats.R- code that conducts analysis that is reported in "Salience Network Community Allegiance across Arousal State"
+
+global_sr_stats.R- code that conducts analysis that is reported in "Global brain switching across arousal state"
+
+moderation_task_analysis.R- code that conducts analysis that is reported in "Arousal state moderates how global brain switching relates to task accuracy & Arousal state does not moderate how static correlation relates to task accuracy"
+
+
+
 
