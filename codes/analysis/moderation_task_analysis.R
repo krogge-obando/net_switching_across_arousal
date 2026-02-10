@@ -1,4 +1,4 @@
-#This code will see if cog-flex relates to network-switch
+#This code will test if arousal moderates how switching or stat corr relates to cognitive performance 
 
 #Load df
 
@@ -6,9 +6,9 @@ library(tidyverse)
 library(dplyr)
 library(stats)
 
-df_net<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/Net_Flex_MSTR.csv")
+df_net<-read.csv("/Net_Flex_MSTR.csv")
 
-df_behavior<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/HCP-YA_allSubjects_behavorialData.csv")
+df_behavior<-read.csv("/HCP-YA_allSubjects_behavorialData.csv")
 
 #remove the subjects that have both alert and drowsy
 
@@ -69,14 +69,12 @@ lm_results <- data.frame(
 
 lm_results$q_value <- p.adjust(lm_results$p_value, method = "BH")
 
-write.csv(lm_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/global_sr_task_moderation_2_9_26.csv")
+write.csv(lm_results,"/global_sr_task_moderation_2_9_26.csv")
 
 
 ##Test if this moderation works for any of the global signal network correlation or static correlation
 
-hcp_df <- read.csv("/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/data/HCP_7T_measures_of_interest.csv")
-
-df_behavior<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/HCP-YA_allSubjects_behavorialData.csv")
+hcp_df <- read.csv("/HCP_7T_measures_of_interest.csv")
 
 #remove the subjects that have both alert and drowsy
 
@@ -130,4 +128,4 @@ interaction_results$FDR_p <- p.adjust(interaction_results$p_value, method = "fdr
 # Final ordering
 interaction_results <- interaction_results[, c("Model", "Term", "Beta", "SE", "t_value", "p_value", "FDR_p")]
 
-write.csv(interaction_results,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/static_gs_net_task_moderation_test_2_9_26.csv")
+write.csv(interaction_results,"/static_gs_net_task_moderation_test.csv")
