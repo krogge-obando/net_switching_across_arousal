@@ -1,6 +1,6 @@
 #This code will compute the statistics for global switching across arousal state
 
-df_net <- read.csv("/Users/roggeokk/Desktop/Projects/Vigilance_SwitchingRate_2/data/FIND_atlas_net_sr_72TR_5_27_25.csv")
+df_net <- read.csv("/FIND_atlas_net_sr_72TR_5_27_25.csv")
 
 df_net$arousal_state<-as.factor(df_net$arousal_state)
 
@@ -55,12 +55,12 @@ vu_df_wilcox_summary <- data.frame(
   rank_mean_alert = rank_mean_alert
 )
 
-write.csv(vu_df_wilcox_summary,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/VU_EEG_fMRI_global_sr_results_2_9_26.csv")
+write.csv(vu_df_wilcox_summary,"/VU_EEG_fMRI_global_sr_results.csv")
 
 
 #Repeat for HCP-7T
 
-df_net<-read.csv("/Users/roggeokk/Desktop/Projects/HCP_7T_SwitchingRate/data/Net_Flex_MSTR.csv")
+df_net<-read.csv("Net_Flex_MSTR.csv")
 
 table(df_net$Arousal_State)
 
@@ -109,6 +109,6 @@ HCP_df_wilcox_summary <- data.frame(
   rank_mean_alert = rank_mean_alert
 )
 
-write.csv(HCP_df_wilcox_summary,"/Users/roggeokk/Desktop/Projects/Net-flex-proj-VU-HCP7T/outputs/HCP_global_sr_results_2_9_26.csv")
+write.csv(HCP_df_wilcox_summary,"/HCP_global_sr_results.csv")
 
 
