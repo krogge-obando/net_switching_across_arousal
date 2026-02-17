@@ -62,10 +62,6 @@ ggplot(gnf_behav, aes(x = global_flex, y = Relational_Task_Acc, color = arousal_
     color = "black"
   ) # Axis labels
 
-
-
-model1<-summary(lm(Relational_Task_Acc ~ global_flex + arousal_state + global_flex:arousal_state, data=gnf_behav ))
-
 ggplot(gnf_behav, aes(x = global_flex, y = WM_Task_Acc, color = arousal_state)) +
   geom_point(size=2) +  # Scatter plot
   geom_smooth(method = "lm") +  # Linear regression trend line
@@ -78,19 +74,6 @@ ggplot(gnf_behav, aes(x = global_flex, y = WM_Task_Acc, color = arousal_state)) 
     axis.title.x = element_text(size = 20), # Bigger x-axis title
     axis.title.y = element_text(size = 20)  # Bigger y-axis title
   ) + labs(x = "Global Brain Flexibility", y = "Working Memory Task Accuracy")  # Axis labels
-
-model2<-summary(lm(WM_Task_Acc ~ global_flex + arousal_state + global_flex:arousal_state, data=gnf_behav ))
-
-
-# Extract the p-values of the interaction term and conduct corrections
-pvals <- c(
-  model1$coefficients[4, 4],
-  model2$coefficients[4, 4]
-)
-
-p.adjust(pvals, method = "BH")
-
-summary(model1)$coefficients
 
 
 
