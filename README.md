@@ -35,9 +35,7 @@ To derive network switching we used the following external functions, please dow
 1. folder GenLouvain-master at [https://github.com/GenLourvain/HenLouvain](https://github.com/GenLouvain/GenLouvain)
 2. flexibilty.m at [http://commdetect.weebly.com/](http://commdetect.weebly.com)
 
-To derive the null models you will need this file
-
-1. brain_benchmark_toolbox-master to get access to this file please email mika.rubinov@vanderbilt.edu
+To get access to the file to derive null models please email mika.rubinov@vanderbilt.edu
 
 ## 💻 Code Info
 
@@ -46,8 +44,6 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 - **derive_FIND_net_ts.m** - code that conducts dual regression to derive networks time series
 
 - **derive_FIND_parcel_ts.m** - code that derives parcel time series 
-
-- **derive_null_models_ts.m** - code that stores null models
 
 - **run_compute_net_switch.m** code that runs compute_net_flex.m to store the experimental or null models to compute network flexiblity
 
