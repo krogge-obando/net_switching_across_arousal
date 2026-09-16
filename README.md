@@ -2,6 +2,8 @@
 
 Hello, this repo will store the code needed to reproduce the results in the paper "Arousal state alters brain network switching and moderates cognitive task performance"
 
+This version of GitHub has been revised 9/16/26 to the current draft of the manuscript that is in review.
+
 ## ⭐ Highlights
 
 This repo provides code to derive:
@@ -14,7 +16,7 @@ This repo provides code to derive:
 
 This repo was designed with two folders
 1. codes: to see the code used to derive any of the things we stated in our *Highlights* go here, for key information of what the code does go to the section  *codes info*
-2. codes/analysis: to see the codes used to compute the analysis and obtain the statistical results of the paper. Please note the information of what code reflects which analysis in the paper can be found in the info.txt document in this folder.
+2. codes/analysis/: to see the codes used to compute the analysis 
 3. data: the only data provided is the outputs used to derive the figures 4A and 4C of this paper. To download the HCP-7T data please go ["here"](https://www.humanconnectome.org/study/hcp-young-adult/data-releases/). For acces to the EEG-fMRI VU data please contact catie.chang@vanderbilt.edu
 
 ## 🧭 Software used in this project
