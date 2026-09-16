@@ -7,7 +7,6 @@ Hello, this repo will store the code needed to reproduce the results in the pape
 This repo provides code to derive:
 - FINDLAB network and parcel time series
 - Network switching of the FINDLAB networks and parcels
-- code to derive null models used in the paper
 - code to compute p-stat from the null models
 - generate all the analysis figures from the paper
 
@@ -55,14 +54,12 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 
 - **parcel_null_model_analysis.R** - code that computes null model analysis to identify p-values
 
-- **violin_plot.R** -code that generates violin plots for this project Figure 2 and 3
+- **sr_arousal_analysis_w_fig.R** -code that runs all the main analysis for the manuscript and makes the manuscript figures 2 and 3.
 
-- **community_allegiance_dot_plot.R** -code that computes community allegiance and makes the figures for figure 4A
+- **non_linear_analysis.R** -code that runs the non linear analysis of the manuscript that includes transitions scans and makes figure 4 on the updated manuscript.
 
-- **community_allegiance_heat_map.R** - code that computes community allegiance as a fraction and makes figures 4C
-
-- **global_switch_task_plots.R** -code that computes and makes figure 5.
+- **robust_moderation_tests.R** - code that runs the moderation tests and figure 5.
 
 ## ❓Have Questions
 
-For additional information about the project or how to use the codes feel free to reach out to my vanderbilt email at kim.kundert.obando@vanderbilt.edu
+For additional information about the project or how to use the codes feel free to reach out to my vanderbilt email at kim.kundert.obando@gmail.com
