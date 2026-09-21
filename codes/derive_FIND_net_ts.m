@@ -7,7 +7,7 @@ clear; clc; close all;
 
 %paths
 main_path = '';
-save_dir='/data1/neurdylab/kim_ro/tri_net_proj/redo_proj/
+save_dir='/
 % mask out the skull (nonzero voxels)
 mni_mask = niftiread('MNI152_T1_2mm_brain_mask_filled.nii.gz');
 brainVox = find(mni_mask>0);
