@@ -60,6 +60,8 @@ Due to reduce redundancy we only share the codes needed to run the analysis with
 - **non_linear_analysis.R** -code that runs the non linear analysis of the manuscript that includes transitions scans and makes figure 5 on the updated manuscript.
 
 - **robust_moderation_tests.R** - code that runs the moderation tests and figure 5.
+  
+- **one_minute_sensitivity_analysis.R** - code that runs the main analysis with data when switching rate was computed at 1 minute.
 
 ## ❓Have Questions
 
